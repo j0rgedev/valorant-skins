@@ -8,7 +8,8 @@
 }
 
 body{
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    margin-bottom: 2rem;
 }
 
 .cards_container{
@@ -94,7 +95,7 @@ body{
 
 @media (max-width: 768px){
     .card{
-        width: 20rem;
+        width: 22rem;
     }
 }
 
