@@ -4,24 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#header').load('/common/header.html');
+        })
+    </script>
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Valorant Skins</title>
 </head>
 <body>
-    <header>
-        <nav>
-            Valorant Skins
-        </nav>
+    <!-- HEADER -->
+    <header id="header">
     </header>
-    <section>
-        <div class="cards_container">
+    <!-- MAIN SECTION-->
+    <section class="hero">
+        <div class="container">
+            <div class="left_column">
+                <h2>Bienvenido al repositorio de Skins de Valorant</h2>
+                <p>Aquí encontrarás toda la información sobre cada arma y skin del juego</p>
+                <button type="button">Descubre más</button>
+            </div>
+            <div class="img">
+                <img src="https://i.ibb.co/ZYsxN8C/logo.png" alt="logo"/>
+            </div>
         </div>
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+              <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </path></defs>
+            <g class="wave1">
+              <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+            </use></g>
+            <g class="wave2">
+              <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </use></g>
+            <g class="wave3">
+              <use xlink:href="#wave-path" x="50" y="9" fill="whitesmoke">
+            </use></g>
+          </svg>
     </section>
-    <script src="./js/skins.js" type="module"></script>
+
+    <!-- FEATURES SECTION-->
+    <section class="features">
+        Hola
+    </section>
+
+    <!-- JS -->
+    <script src=""></script>
 </body>
 </html>
