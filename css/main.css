@@ -12,6 +12,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px 50px 0px 50px
 }
 
 .left_column{
@@ -97,6 +98,7 @@ html{
     padding: 1rem;
     width: 300px;
     height: 200px;
+    overflow: hidden;
 }
 
 .box h3{
@@ -258,4 +260,83 @@ svg {
 @font-face{
     font-family: valorant-font;
     src: url('./assets/valorant.ttf');
+}
+
+/* RESPONSIVE */
+@media (max-width: 912px){
+    .header{
+        justify-content: unset;
+    }
+
+    .header h1{
+        font-size: 24px;
+    }
+
+    .container{
+        flex-direction: column-reverse;
+        margin: 0px 10% 0px 10%;
+    }
+
+    .left_column{
+        margin-right: 0px;
+        height: 300px;
+        align-items: center;
+        width: auto;
+    }
+
+    .left_column h2{
+        text-align: center;
+    }
+
+    .left_column p{
+        text-align: center;
+    }
+
+    .img img{
+        width: 300px;
+    }
+
+    .hero-waves{
+        margin-top: 0px;
+    }
+
+    .features{
+        height: auto;
+    }
+
+    .features .title{
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .f_container{
+        flex-direction: column;
+    }
+
+    footer{
+        padding: 2rem;
+    }
+
+    .footer_container{
+        align-items: unset;
+    }
+
+    .first_row{
+        justify-content: space-between;
+    }
+
+    .first_row i{
+       margin: 0;
+    }
+
+    .last_row{
+        margin-top: 100px;
+    }
+
+    .last_row h1{
+        text-align: center;
+        font-size: 32px;
+    }
+
+
 }
