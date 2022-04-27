@@ -25,7 +25,7 @@ export default function showContent(array){
         </div>`
     }
     loader.style.display= 'none';
-    aux.style.height = 'none';
+    aux.style.height = 'auto';
     content.innerHTML = data;
 }
 
