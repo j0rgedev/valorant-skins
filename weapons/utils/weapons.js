@@ -1,7 +1,8 @@
 export default function showContent(array){
     let data = '';
     const aux = document.getElementById('cards_wr');
-    let content = document.querySelector('.cards_container');
+    const content = document.querySelector('.cards_container');
+    const loader = document.getElementById('loader');
     for(let i=0;i<array.length;i++){
         data+= `
             <div class="card">
@@ -23,8 +24,8 @@ export default function showContent(array){
             </div>
         </div>`
     }
+    loader.style.display= 'none';
     aux.style.height = 'none';
-    
     content.innerHTML = data;
 }
 
