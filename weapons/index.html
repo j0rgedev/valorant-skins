@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href='../common/header.css'>
+    <link rel="stylesheet" href='../common/styles.css'>
+    <link rel="stylesheet" href='../common/loader.css'>
+    <link rel="stylesheet" href='./css/main.css'>
+    <title>Valorant Skins</title>
+</head>
+<body>
+    <my-header class="header">
+    </my-header>
+    <section class="hero">
+        <div class="container">
+            <h2 class="title">ARMAS</h2>
+            <div class="lds-roller" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="cards_container" id="cards_wr">
+            </div>
+            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+                <defs>
+                  <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path></defs>
+                <g class="wave1">
+                  <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                </use></g>
+                <g class="wave2">
+                  <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                </use></g>
+                <g class="wave3">
+                  <use xlink:href="#wave-path" x="50" y="9" fill="rgb(255, 237, 237)">
+                </use></g>
+            </svg>
+        </div>
+        
+    </section>
+    <script src="../js/setHeader.js" type="module"></script>
+    <script src="./js/api.js" type="module"></script>
+    <script src="./js/main.js"type="module"></script>
+</body>
+</html>

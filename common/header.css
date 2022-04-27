@@ -39,3 +39,14 @@
     font-family: valorant-font;
     src: url('../assets/valorant.ttf');
 }
+
+/* RESPONSIVE */
+@media (max-width: 912px){
+    .header{
+        justify-content: unset;
+    }
+
+    .header h1{
+        font-size: 24px;
+    }
+}

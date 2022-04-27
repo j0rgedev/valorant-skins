@@ -8,6 +8,12 @@ html{
     zoom: 100%;
 }
 
+.hero{
+    width: 100%;
+    padding: 120px 0 0;
+    background: linear-gradient(35deg,#FF4655,#111825 80%);
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -173,12 +179,6 @@ footer{
 }
 
 /* WAVES TEMPLATE*/
-.hero{
-    width: 100%;
-    padding: 120px 0 0;
-    background: linear-gradient(35deg,#FF4655,#111825 80%);
-}
-
 .hero-waves {
     display: block;
     margin-top: 60px;
@@ -264,14 +264,6 @@ svg {
 
 /* RESPONSIVE */
 @media (max-width: 912px){
-    .header{
-        justify-content: unset;
-    }
-
-    .header h1{
-        font-size: 24px;
-    }
-
     .container{
         flex-direction: column-reverse;
         margin: 0px 10% 0px 10%;
@@ -337,6 +329,4 @@ svg {
         text-align: center;
         font-size: 32px;
     }
-
-
 }
