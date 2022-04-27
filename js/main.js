@@ -1,3 +1,3 @@
 document.querySelector(".main_btn").onclick = () => {
-    document.location.href = '../weapons/index.html';
+    document.location.href = '../weapons/';
 }
