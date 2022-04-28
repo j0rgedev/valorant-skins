@@ -5,7 +5,6 @@
     color: white;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     transition: all .5s;
 }
      
@@ -19,6 +18,10 @@
     font-family: valorant-font;
     letter-spacing: 2px;
     cursor: pointer;
+}
+
+nav{
+    margin: 0;
 }
 
 .nav_items{

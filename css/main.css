@@ -115,15 +115,18 @@ html{
     color: black;
 }
 
-.box a:hover{
-    
-}
-
 .box h3{
-    border-bottom: 2px solid black;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     letter-spacing: 2px;
+    border-radius: 8px;
     font-size: 20px;
     margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+.box a h3:hover{
+    background-color: rgba(0, 0, 0,0.8);
+    color: white;
 }
 
 .box img{
@@ -340,7 +343,7 @@ svg {
         text-align: center;
     }
 
-    .f_container{
+    .f_container, .f2_container{
         flex-direction: column;
     }
 
