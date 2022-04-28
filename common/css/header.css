@@ -1,0 +1,75 @@
+.header{ 
+    position: fixed;
+    padding: 20px 15px 20px 15px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all .5s;
+}
+     
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+.header h1{
+    font-family: valorant-font;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.nav_items{
+    display: flex;
+    list-style: none;
+}
+
+.nav_items a{
+    position: relative;
+    margin: 0px 40px; 
+    color: rgba(255, 255, 255,0.8);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav_items a:hover{
+    color: white;
+}
+
+.nav_items a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    transition: .5s;
+}
+
+.nav_items li a:hover:after{
+    width: 100%;
+}
+
+/* SCROLL */
+.header.scroll{
+    background: rgba(19,24,34,0.9);
+}
+
+@font-face{
+    font-family: valorant-font;
+    src: url('/assets/valorant.ttf');
+}
+
+/* RESPONSIVE */
+@media (max-width: 952px){
+    .header{
+        justify-content: unset;
+    }
+
+    .nav_items{
+        display: none;
+    }
+}
