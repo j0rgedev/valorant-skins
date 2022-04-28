@@ -4,10 +4,6 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-html{
-    zoom: 100%;
-}
-
 .hero{
     width: 100%;
     padding: 120px 0 0;
