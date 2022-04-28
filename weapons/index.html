@@ -9,15 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href='../common/header.css'>
-    <link rel="stylesheet" href='../common/styles.css'>
-    <link rel="stylesheet" href='../common/loader.css'>
+    <link rel="stylesheet" href='../common/css/header.css'>
+    <link rel="stylesheet" href='../common/css/styles.css'>
+    <link rel="stylesheet" href='../common/css/loader.css'>
     <link rel="stylesheet" href='./css/main.css'>
     <title>Valorant Skins</title>
 </head>
 <body>
-    <my-header class="header">
-    </my-header>
+    <header class="header" id="header">
+      <a href='../index.html'><h1>Valorant Skins</h1></a>
+      <nav>
+          <ul class="nav_items">
+              <li><a href="#main_section">Home</a></li>
+              <li><a href="#features_section">Características</a></li>
+              <li><a href="#contact">Contacto</a></li>
+          </ul>
+      </nav>
+  </header>
     <section class="hero">
         <div class="container">
             <h2 class="title">ARMAS</h2>
@@ -41,7 +49,7 @@
         </div>
         
     </section>
-    <script src="../js/setHeader.js" type="module"></script>
+    <script src="../common/js/setHeader.js" type="module"></script>
     <script src="./js/api.js" type="module"></script>
     <script src="./js/main.js"type="module"></script>
 </body>

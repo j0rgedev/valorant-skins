@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="./common/header.css">
+    <link rel="stylesheet" href="./common/css/header.css">
     <link rel="stylesheet" href="./css/main.css">
     <!-- FONTAWESOME-->
     <script src="https://kit.fontawesome.com/46ad5ba21c.js" crossorigin="anonymous"></script>
@@ -13,10 +13,18 @@
 </head>
 <body>
     <!-- HEADER -->
-    <my-header class="header">
-    </my-header>
+    <header class="header" id="header">
+        <a href='index.html'><h1>Valorant Skins</h1></a>
+        <nav>
+            <ul class="nav_items">
+                <li><a href="#main_section">Home</a></li>
+                <li><a href="#features_section">Características</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- MAIN SECTION-->
-    <section class="hero">
+    <section class="hero" id="main_section">
         <div class="container">
             <div class="left_column">
                 <h2>Bienvenido al repositorio de Skins de Valorant</h2>
@@ -43,7 +51,7 @@
         </svg>
     </section>
     <!-- FEATURES SECTION-->
-    <section class="features">
+    <section class="features" id="features_section">
         <div class="title">
             <h1>¿Qué encontrarás?</h1>
             <p>¡Hasta el cuchillo prisma!</p>
@@ -51,23 +59,37 @@
         
         <div class="f_container">
             <div class="box">
-                <h3>Armas</h3>
+                <a href="./weapons/"><h3>Armas</h3></a>
                 <img src="./img/Valorant-weapons.jpg" alt="weapons_img">
             </div>
             <div class="box">
-                <h3>Skins</h3>
+                <a href="#"><h3>Skins</h3></a>
                 <img src="./img/Prime_Vandal.webp" alt="skins_img">
             </div>
             <div class="box">
-                <h3>Bundles</h3>
+                <a href="#"><h3>Bundles</h3></a>
                 <img src="./img/last_bundle.jpg" alt="bundle_img">
+            </div>
+        </div>
+        <div class="f2_container">
+            <div class="box">
+                <a href="#"><h3>Buddies</h3></a>
+                <img src="./img/buddies.jpg" alt="weapons_img">
+            </div>
+            <div class="box">
+                <a href="#"><h3>Tarjetas</h3></a>
+                <img src="./img/cards.webp" alt="weapons_img">
+            </div>
+            <div class="box">
+                <a href="#"><h3>Sprays</h3></a>
+                <img src="./img/sprays.jpg" alt="weapons_img">
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer_container">
+        <div class="footer_container" id="contact">
             <div class="first_row">
                 <a href="https://github.com/jorgevfx"><i class="fa-brands fa-github"></i></a>  
                 <i class="fa-solid fa-slash"></i>
