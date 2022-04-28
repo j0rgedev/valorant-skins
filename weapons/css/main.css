@@ -7,6 +7,9 @@
     margin: auto;
 }
 
+html{
+    zoom: 110%;
+}
 
 .title{
     text-align: center;

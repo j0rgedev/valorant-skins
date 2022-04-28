@@ -136,63 +136,6 @@ html{
 .f_container .box:nth-child(2) img{
     margin-top: 40px;
 }
-
-footer{
-    background: linear-gradient(35deg,#FF4655,#111825 80%);
-    height: 150px;
-    padding: 1.5rem 10rem 0rem 10rem;
-}
-
-.footer_container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: rgb(195, 195, 195);
-}
-
-.first_row{
-    display: flex;
-}
-
-.first_row a{
-    color: rgb(195, 195, 195);
-    transition: .5s;
-}
-
-.first_row i{
-    font-size: 36px;
-    margin: 25px 3rem 0px 3rem;
-    cursor: pointer;
-}
-
-.first_row a:nth-child(1):hover{
-    color: white;
-}
-
-.first_row a:nth-child(3):hover{
-    color: #1D9BF0;
-}
-
-.first_row a:nth-child(5):hover{
-    color: #5460E6;
-}
-
-.first_row i:nth-child(2){
-    transform: rotateY(180deg);
-}
-
-.first_row i:nth-child(4){
-    transform: rotateY(180deg);
-}
-
-.last_row{
-    margin-top: 40px;
-}
-
-.last_row h1{
-    font-family: valorant-font;
-}
-
 /* WAVES TEMPLATE*/
 .hero-waves {
     display: block;
@@ -345,30 +288,5 @@ svg {
 
     .f_container, .f2_container{
         flex-direction: column;
-    }
-
-    footer{
-        padding: 2rem;
-    }
-
-    .footer_container{
-        align-items: unset;
-    }
-
-    .first_row{
-        justify-content: space-between;
-    }
-
-    .first_row i{
-       margin: 0;
-    }
-
-    .last_row{
-        margin-top: 100px;
-    }
-
-    .last_row h1{
-        text-align: center;
-        font-size: 32px;
     }
 }
