@@ -38,14 +38,6 @@ footer{
     color: #5460E6;
 }
 
-.first_row i:nth-child(2){
-    transform: rotateY(180deg);
-}
-
-.first_row i:nth-child(4){
-    transform: rotateY(180deg);
-}
-
 .last_row{
     margin-top: 40px;
 }

@@ -5,6 +5,7 @@
     color: white;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     transition: all .5s;
 }
      
@@ -57,6 +58,22 @@ nav{
     width: 100%;
 }
 
+.fa-solid{
+    cursor: pointer;
+}
+
+.fa-solid.fa-bars{
+    display: none;
+    font-size: 32px;
+    margin-right: 28px;
+}
+
+.fa-solid.fa-xmark{
+    display: none;
+    font-size: 22px;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+}
+
 /* SCROLL */
 .header.scroll{
     background: rgba(19,24,34,0.9);
@@ -70,10 +87,68 @@ nav{
 /* RESPONSIVE */
 @media (max-width: 952px){
     .header{
-        justify-content: unset;
+        justify-content: space-between;
     }
 
     .nav_items{
         display: none;
+    }
+
+    .fa-solid.fa-bars{
+        display: inline;
+    }
+
+    .fa-solid.fa-xmark{
+        display: block;
+        position: absolute;
+        right: 24px;
+        border-radius: 50%;
+        transition: .5s;
+    }
+
+    .fa-solid.fa-xmark:hover{
+        background-color: black;
+        color: gray;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        width: 60%;
+        height: 100vh;
+        padding: 24px 0;
+        z-index: 9999;
+        transition: .5s;
+        border-radius: 0 0 0 50%;
+        color: black;
+    }
+
+    .nav_items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 80%;
+    }
+
+    .nav_items a{
+        margin: 2rem 0;
+        color: black;
+        font-weight: bold;
+    }
+
+    .nav_items a:hover{
+        color: black;
+    }
+
+    .nav_items a:after{
+        background-color: black;
+    }
+
+    .show{
+        right: 0;
     }
 }
