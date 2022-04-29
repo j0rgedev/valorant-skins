@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         return r.json();
     }
-
     getAPIData()
         .then((data) => showContent(data.data))
         .catch(err => console.error(err));

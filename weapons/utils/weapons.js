@@ -1,8 +1,8 @@
+import loadingContent from '../js/main.js'
+
 export default function showContent(array){
     let data = '';
-    const aux = document.getElementById('cards_wr');
     const content = document.querySelector('.cards_container');
-    const loader = document.getElementById('loader');
     for(let i=0;i<array.length;i++){
         data+= `
             <div class="card">
@@ -24,8 +24,7 @@ export default function showContent(array){
             </div>
         </div>`
     }
-    loader.style.display= 'none';
-    aux.style.height = 'auto';
+    loadingContent();
     content.innerHTML = data;
 }
 
