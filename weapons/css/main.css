@@ -197,11 +197,18 @@ html{
 
 
 /* RESPONSIVE */
-@media (max-width: 768px){
+@media (max-width: 912px){
     .card{
-        width: 22rem;
+        width: 20rem;
     }
 
+    .cards_container{
+        gap: 0;
+        row-gap: 20px;
+    }
+    .left_column{
+        max-width: 0px;
+    }
     .others{
         height: auto;
     }
