@@ -198,6 +198,9 @@ html{
 
 /* RESPONSIVE */
 @media (max-width: 912px){
+    html{
+        zoom: 110%;
+    }
     .card{
         width: 20rem;
     }
