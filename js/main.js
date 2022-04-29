@@ -1,5 +1,5 @@
 document.querySelector(".main_btn").onclick = () => {
-    document.location.href = './weapons/';
+    document.location.href = '#features_section';
 }
 
 
