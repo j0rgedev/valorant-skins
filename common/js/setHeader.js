@@ -28,12 +28,7 @@ navitems.forEach((item,i)=>{
     navitems[i].addEventListener('click',()=>{
         navMenu.classList.remove('show');
     })
-}) 
+})
 
-document.onclick = function(e){
-    if(navMenu.classList.contains('show') && e.target.id == 'main_section'){
-        navMenu.classList.remove('show');
-    }
-}
 
 

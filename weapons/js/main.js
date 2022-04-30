@@ -5,3 +5,5 @@ export default function loadingContent(){
     loader.style.display = 'none';
     aux.style.height = 'auto';
 }
+
+

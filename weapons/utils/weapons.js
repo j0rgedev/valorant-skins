@@ -5,24 +5,33 @@ export default function showContent(array){
     const content = document.querySelector('.cards_container');
     for(let i=0;i<array.length;i++){
         data+= `
-            <div class="card">
-            <div class="left_column">
-                <h2>${array[i].displayName}</h2>
-                <img src="${getWeaponIcon(array,i)}" alt="${array[i].displayName}.png" class="card_image">
-            </div>
-            <div class="right_column">
-                <div>
-                    <h4>${getWeaponCategory(array,i)}</h4>
+            <div class="card" data-aos="fade-up">
+                <div class="front">
+                    <h2>${array[i].displayName}</h2>
+                    <div>
+                        <img src="${getWeaponIcon(array,i)}" alt="${array[i].displayName}.png" class="card_image_front">
+                    </div>
                 </div>
-                <div>
-                    <h5>Wall penetration</h5>
-                    <p>${getWeaponPenetration(array,i)}</p>
-                    <h5>Credits</h5>
-                    <p>${getWeaponCredits(array,i)}</p>
+                <div class="back">
+                    <div class="left_column">
+                        <h2>${array[i].displayName}</h2>
+                        <img src="${getWeaponIcon(array,i)}" alt="${array[i].displayName}.png" class="card_image_back">
+                    </div>
+                    <div class="right_column">
+                        <div>
+                            <h4>${getWeaponCategory(array,i)}</h4>
+                        </div>
+                        <div>
+                            <h5>Wall penetration</h5>
+                            <p>${getWeaponPenetration(array,i)}</p>
+                            <h5>Credits</h5>
+                            <p>${getWeaponCredits(array,i)}</p>
+                        </div>
+                        <button class="button">Ver skins</button>
+                    </div>
                 </div>
-                <button class="button">Ver skins</button>
             </div>
-        </div>`
+       `
     }
     loadingContent();
     content.innerHTML = data;
