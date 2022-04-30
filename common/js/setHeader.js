@@ -28,7 +28,4 @@ navitems.forEach((item,i)=>{
     navitems[i].addEventListener('click',()=>{
         navMenu.classList.remove('show');
     })
-})
-
-
-
+}) 

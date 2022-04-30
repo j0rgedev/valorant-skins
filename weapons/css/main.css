@@ -8,6 +8,8 @@ html{
     scroll-behavior: smooth;
 }
 
+
+
 .header{
     z-index: 9999;
 }
@@ -41,11 +43,11 @@ html{
     border-radius: 50px;
 }
 
-.card:hover .front{
+.flip:hover .front{
     transform: perspective(600px) rotateY(180deg);
 }
 
-.card:hover .back{
+.flip:hover .back{
     transform: perspective(600px) rotateY(360deg);
 }
 
@@ -74,8 +76,8 @@ html{
     justify-content: center;
 }
 
-.cards_container div:nth-child(8) img,
-.cards_container div:nth-child(9) img{
+.card:nth-child(8) .front img,
+.card:nth-child(9) .front img{
     width: 70%;
 }
 
@@ -114,7 +116,7 @@ html{
 
 .left_column img{
     margin: 0;
-    width: 8rem;
+    width: 7rem;
 }
 
 .right_column{

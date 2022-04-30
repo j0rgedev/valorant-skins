@@ -15,5 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
     getAPIData()
         .then((data) => showContent(data.data))
         .catch(err => console.error(err));
+        
 });
 

@@ -5,8 +5,8 @@ export default function showContent(array){
     const content = document.querySelector('.cards_container');
     for(let i=0;i<array.length;i++){
         data+= `
-            <div class="card" data-aos="fade-up">
-                <div class="front">
+            <div class="card flip" data-aos="fade-up" id="card">
+                <div class="front" id='front'>
                     <h2>${array[i].displayName}</h2>
                     <div>
                         <img src="${getWeaponIcon(array,i)}" alt="${array[i].displayName}.png" class="card_image_front">
