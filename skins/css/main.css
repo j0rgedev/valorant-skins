@@ -32,8 +32,8 @@ html{
     height: 80vh;
     max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
     justify-items: center;
 }
 
@@ -41,135 +41,121 @@ html{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
-    width: 24rem;
-    height: 17rem;
+    width: 17rem;
+    height: 15rem;
     position: relative;
+    overflow: hidden;
+    background: white;
     border-radius: 50px;
+    cursor: default;
+}
+
+.card .front{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 4rem;
+    background: linear-gradient(20deg, rgba(116,116,116,1), rgba(0,0,0,1));
+    z-index: 2;
+    transition: .8s;
 }
 
 .card:hover .front{
-    transform: perspective(600px) rotateY(180deg);
+    height: 100%;
+    border-radius: 0 0 50px 50px;
 }
 
-.card:hover .back{
-    transform: perspective(600px) rotateY(360deg);
+.card .front div,
+.card .back div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
 }
 
-.front{
-    transform: perspective(600px) rotateY(0deg);
-    position: absolute;
-    background: #4C4C4C;
+.card .front div:nth-child(1){
+    height: 4rem;
+    border-bottom: 2px solid;
+}
+
+.card .front h2{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 1.2rem;
+}
+
+.card .front div:nth-child(2){
+    margin-top: 18px;
+    height: 50px;
+}
+
+.card .front div:nth-child(2) img{
+    width: 200px;
+}
+
+.card .front div:nth-child(3){
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.card .front div:nth-child(3) img{
+    width: 20px;
+    margin-left: 5px;
+}
+
+.card .front div:nth-child(4){
+    margin-top: 18px;
+    font-size: 18px;
+}
+
+.card .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+}
+
+.card .back div{
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    color: white;
-    border-radius: 50px;
-    transition: .5s;
+    margin-top: 50px;
+    width: 300px;
+    padding: 1rem;
 }
 
-.front div{
-    height: 125px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card .back img{
+    width: 100%;
 }
 
-.card:nth-child(8) .front img,
-.card:nth-child(9) .front img{
+.card.Frenzy .back img,
+.card.Classic .back img,
+.card.Sheriff .back img{
+    width: 80%;
+}
+
+.card.Melee .back img{
     width: 70%;
 }
 
-.front img{
-    width: 100%;
+.card.Frenzy .front div:nth-child(2) img{
+    width: 80px;
 }
 
-.back{
-    background: white;
-    transform: perspective(600px) rotateY(180deg);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    overflow: hidden;
-    display: flex;
-    transition: .5s;
-    border-radius: 50px;
-}
-
-.left_column{
-    margin: 0;
-    background: #4C4C4C;
-    color: white;
-    padding: 4rem;
-    max-width: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.left_column h2{
-    margin: 0;
-}
-
-.left_column img{
-    margin: 0;
-    width: 7rem;
-}
-
-.right_column{
-    margin:0;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.right_column div{
-    margin: 0;
-}
-
-.right_column h4{
-    font-size: 24px;
-}
-
-.right_column h5{
-    margin-top: 4px;
-    font-size: 16px;
-}
-
-.right_column p{
-    color:rgb(0, 0, 0, 0.7);
-}
-
-.right_column button{
-    margin: 0;
-    margin-top: 8px;
-    border-radius: 3rem;
-    padding: 0.75rem;
+.card.Classic .front div:nth-child(2) img,
+.card.Sheriff .front div:nth-child(2) img{
     width: 100px;
-    border: 1px solid transparent;
-    background:rgb(0, 0, 0, 0.7);
-    color: white;
-    cursor: pointer;
-    align-self: flex-end;
-    transition: .5s;
 }
 
-.right_column button:hover{
-    border-color: rgb(0, 0, 0, 0.7);
-    background: white;
-    color: rgb(0, 0, 0, 0.7);
-    font-weight: bold;
+.card.Stinger .front div:nth-child(2) img,
+.card.Melee .front div:nth-child(2) img{
+    width: 80px;
 }
+
+
+
+
 
 #loader{
     display: flex;
@@ -246,8 +232,8 @@ html{
     width: 270px;
 }
 
-.f_container .box:nth-child(1) img{
-    margin-top: 40px;
+.f_container .box:nth-child(2) img{
+    margin-top: 10px;
 }
 
 @keyframes rotation {
@@ -265,16 +251,12 @@ html{
     html{
         zoom: 110%;
     }
-    .card{
-        width: 20rem;
-    }
 
     .cards_container{
-        row-gap: 50px;
+        gap: 0;
+        row-gap: 40px;
     }
-    .left_column{
-        max-width: 0px;
-    }
+
     .others{
         height: auto;
     }

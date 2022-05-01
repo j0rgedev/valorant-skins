@@ -1,11 +1,11 @@
-import loadingContent from '../js/main.js'
+import loadingContent from '../../common/js/other.js'
 
 export default function showContent(array){
     let data = '';
     const content = document.querySelector('.cards_container');
     for(let i=0;i<array.length;i++){
         data+= `
-            <div class="card flip" data-aos="fade-up" id="card">
+            <div class="card flip" data-aos="fade-up">
                 <div class="front" id='front'>
                     <h2>${array[i].displayName}</h2>
                     <div>
