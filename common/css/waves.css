@@ -85,7 +85,7 @@ svg {
 
 @font-face{
     font-family: valorant-font;
-    src: url('./assets/valorant.ttf');
+    src: url('../../assets/valorant.ttf');
 }
 
 

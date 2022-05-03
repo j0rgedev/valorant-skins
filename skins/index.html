@@ -15,19 +15,25 @@
     <link rel="stylesheet" href='./css/main.css'>
     <!-- FONTAWESOME-->
     <script src="https://kit.fontawesome.com/46ad5ba21c.js" crossorigin="anonymous"></script>
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Valorant Skins</title>
 </head>
 <body>
     <!-- HEADER -->
     <header class="header" id="header">
-        <a href='../index.html'><h1>Valorant Skins</h1></a>
+        <a href='../'><h1>Valorant Skins</h1></a>
         <nav id="nav">
             <i class="fa-solid fa-xmark" id="closenav_btn"></i>
             <ul class="nav_items">
                 <li><a href="#main_section">Inicio</a></li>
-                <li><a href="#others_section">Otros</a></li>
+                <li><a href="#others_section">Otros</a>
+                  <ul>
+                      <li><a href="../weapons/">Armas</a></li>
+                      <li><a href="#">Bundles</a></li>
+                      <li><a href="#">Buddies</a></li>
+                      <li><a href="#">Tarjetas</a></li>
+                      <li><a href="#">Sprays</a></li>
+                  </ul>
+                </li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
@@ -37,6 +43,14 @@
     <section class="hero" id="main_section">
         <div class="container">
             <h2 class="title">SKINS</h2>
+            <div class="filters" id="filters">
+                <h4>Filtros</h4>
+                <div>
+                    <select name="Armas" class="weapons_select"></select>
+                    <button class="filter_btn" id="filter_btn">Filtrar</button>
+                </div>
+            </div>
+            
             <div id="loader">
               <span class="loader"></span>
             </div>
@@ -66,27 +80,28 @@
       </div>
       <div class="f_container">
         <div class="box">
-            <a href="#"><h3>Armas</h3></a>
-            <img src="../img/Valorant-weapons.jpg" alt="skins_img">
+            <h3>Armas</h3>
+            <a href="../weapons/"><img src="../img/Valorant-weapons.jpg" alt="weapons_img"></a>
         </div>
         <div class="box">
-            <a href="#"><h3>Bundles</h3></a>
-            <img src="../img/last_bundle.jpg" alt="bundle_img">
+            <h3>Bundles</h3>
+            <a href="#"><img src="../img/last_bundle.jpg" alt="bundle_img"></a>
         </div>
         <div class="box">
-          <a href="#"><h3>Buddies</h3></a>
-          <img src="../img/buddies.jpg" alt="weapons_img">
+          <h3>Buddies</h3>
+          <a href="#"><img src="../img/buddies.jpg" alt="weapons_img"></a>
       </div>
     </div>
     <div class="f2_container">
         <div class="box">
-            <a href="#"><h3>Tarjetas</h3></a>
-            <img src="../img/cards.webp" alt="weapons_img">
+            <h3>Tarjetas</h3>
+            <a href="#"><img src="../img/cards.webp" alt="weapons_img"></a>
         </div>
         <div class="box">
-            <a href="#"><h3>Sprays</h3></a>
-            <img src="../img/sprays.jpg" alt="weapons_img">
+            <h3>Sprays</h3>
+            <a href="#"><img src="../img/sprays.jpg" alt="weapons_img"></a>
         </div>
+    </div>
     </div>
     </section>
     <!-- FOOTER -->
@@ -97,7 +112,7 @@
               <i class="fa-solid fa-slash"></i>
               <a href="https://twitter.com/jorgevfx"><i class="fa-brands fa-twitter"></i></a>
               <i class="fa-solid fa-slash"></i>
-              <a href="https://discord.gg/G5YrpQJk"><i class="fa-brands fa-discord"></i></a> 
+              <a href="https://discord.gg/zEmmh4g6"><i class="fa-brands fa-discord"></i></a> 
           </div>
           <div class="last_row">
               <h1>Valorant Skins</h1>
@@ -110,11 +125,5 @@
   <script src="./js/main.js" type="module"></script>
   <!-- AOS -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 3000,
-      once: true,
-    });
-  </script>
 </body>
 </html>

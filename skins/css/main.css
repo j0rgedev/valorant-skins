@@ -23,13 +23,51 @@ html{
     color: white;
     letter-spacing: 0.5rem;
     font-size: 42px;
-    margin-bottom: 3rem;
+}
+
+.filters{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3rem;
+    color: white;
+}
+
+.filters h4{
+    font-size: 22px;
+}
+
+.filters div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+}
+
+.filters select{
+    padding: 0.5rem;
+}
+
+
+.filters .filter_btn{
+    padding: 0.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: .8s;
+}
+
+.filter_btn:hover{
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
 }
 
 .cards_container{
     margin: auto;
     position: relative;
-    height: 80vh;
+    height: 1000vh;
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -110,6 +148,15 @@ html{
     font-size: 18px;
 }
 
+.card .front div:nth-child(4) p:hover{
+    cursor: pointer;
+    transition: .5s;
+}
+.card .front div:nth-child(4) p:hover{
+    transform: scale(1.1);
+    letter-spacing: 2px;
+}
+
 .card .back{
     display: flex;
     justify-content: center;
@@ -153,16 +200,13 @@ html{
     width: 80px;
 }
 
-
-
-
-
 #loader{
     display: flex;
     justify-content: center;
 }
 
 .loader {
+    margin-top: 32px;
     width: 48px;
     height: 48px;
     border: 5px solid #FFF;
@@ -209,27 +253,22 @@ html{
     overflow: hidden;
 }
 
-.box a{
-    text-decoration: none;
-    color: black;
-}
-
 .box h3{
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
     letter-spacing: 2px;
     border-radius: 8px;
     font-size: 20px;
     margin-bottom: 20px;
-    transition: 0.5s;
-}
-
-.box a h3:hover{
-    background-color: rgba(0, 0, 0,0.8);
-    color: white;
 }
 
 .box img{
     width: 270px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.box img:hover{
+    transform: scale(1.2);
 }
 
 .f_container .box:nth-child(2) img{
@@ -269,5 +308,11 @@ html{
     .f_container, .f2_container{
         flex-direction: column;
     }
+
+    .filters{
+        margin: 3rem 1rem 3rem 1rem;
+    }
 }
+
+
 

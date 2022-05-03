@@ -7,6 +7,8 @@
     justify-content: space-around;
     align-items: center;
     transition: all .5s;
+    z-index: 9999;
+    background: rgba(19,24,34,1);
 }
      
 .header a{
@@ -27,6 +29,7 @@ nav{
 
 .nav_items{
     display: flex;
+    align-items: center;
     list-style: none;
 }
 
@@ -47,7 +50,7 @@ nav{
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -10px;
+    bottom: -5px;
     width: 0%;
     height: 3px;
     background-color: white;
@@ -56,6 +59,29 @@ nav{
 
 .nav_items li a:hover:after{
     width: 100%;
+}
+
+.nav_items li:nth-child(2) ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    transition: all 1s;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.nav_items li:nth-child(2):hover ul{
+    max-height: 250px;
+}
+
+.nav_items li:nth-child(2) ul li{
+    margin-top: 1rem;
+}
+
+.nav_items li:nth-child(2) ul li a{
+    font-size: 16px;
 }
 
 .fa-solid{
@@ -72,11 +98,6 @@ nav{
     display: none;
     font-size: 22px;
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-}
-
-/* SCROLL */
-.header.scroll{
-    background: rgba(19,24,34,1);
 }
 
 @font-face{

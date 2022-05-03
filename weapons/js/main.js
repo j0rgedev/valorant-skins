@@ -7,7 +7,3 @@ document.addEventListener("DOMContentLoaded", function() {
         .then((data) => showContent(data.data))
         .catch(err => console.error(err));
 });
-
-
-
-
