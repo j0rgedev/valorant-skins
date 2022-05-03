@@ -25,36 +25,92 @@ html{
     font-size: 42px;
 }
 
+.disclaimer{
+    opacity: 0;
+    text-align: center;
+    color: white;
+    margin-top: -8px;
+    transform: translateY(-16px);
+    transition: .6s;
+}
+
+.disclaimer.active{
+    opacity: 1;
+    margin-top: 12px;
+    transform: translateY(0);
+}
+
+.title_wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.title_wrapper div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.title_wrapper div:nth-child(2){
+    margin-left: -4rem;
+    color: white;
+}
+
 .filters{
-    display: none;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 3rem;
+    flex-wrap: wrap;
     color: white;
+    transition: .6s;
+    transform: translateY(24px);
+    opacity: 0;
+    margin-top: -45px;
+}
+
+.filters.active{
+    margin: 2rem;
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 .filters h4{
     font-size: 22px;
 }
 
-.filters div{
+.right{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     width: 300px;
 }
 
+.right div{
+    opacity: 0;
+    transform: translateX(18px) ;
+    transition: .6s;
+    margin-left: -5rem;
+}
+
+.right div.active{
+    margin-left: 0px;
+    opacity: 1;
+    transform: translateX(0px);
+}
+
 .filters select{
     padding: 0.5rem;
+    border-radius: 8px;
 }
 
 
 .filters .filter_btn{
     padding: 0.5rem;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    letter-spacing: 1px;
     transition: .8s;
+    font-weight: bold;
 }
 
 .filter_btn:hover{
@@ -66,6 +122,7 @@ html{
 
 .cards_container{
     margin: auto;
+    padding-top: 1.5rem;
     position: relative;
     height: 1000vh;
     max-width: 1200px;
@@ -86,6 +143,14 @@ html{
     background: white;
     border-radius: 50px;
     cursor: default;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: .8s;
+}
+
+.card.active{
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 .card .front{
@@ -309,9 +374,6 @@ html{
         flex-direction: column;
     }
 
-    .filters{
-        margin: 3rem 1rem 3rem 1rem;
-    }
 }
 
 

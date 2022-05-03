@@ -5,13 +5,13 @@ export default async function showContent(array){
     runTest();
     let data = '';
     const content = document.querySelector('.cards_container');
-    const f = document.getElementById('filters');
+    const disc = document.getElementById('disclaimer');
     setTimeout(() => {
         for(let i=0;i<array.length;i++){
             for(let j=0;j<array[i].skins.length;j++){
                 let cost = array[i].skins[j].levels[0].uuid;
                 data+=`
-                    <div class="card ${array[i].displayName}">
+                    <div class="card ${array[i].displayName}" id="card">
                         <div class="front">
                             <div>
                                 <h2>${array[i].skins[j].displayName}</h2>
@@ -35,10 +35,10 @@ export default async function showContent(array){
                 `
             }
         }
-        f.style.display = 'flex';
-        loadingContent();
         content.innerHTML = data;
+        loadingContent();
     }, 2000);
+    disc.classList.add('active');
 }
 
 const skinsPrices = [];

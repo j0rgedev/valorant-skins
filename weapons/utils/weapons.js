@@ -27,7 +27,7 @@ export default function showContent(array){
                             <h5>Credits</h5>
                             <p>${getWeaponCredits(array,i)}</p>
                         </div>
-                        <button class="button">Ver skins</button>
+                        <button class="show_button" id="${array[i].displayName}">Ver skins</button>
                     </div>
                 </div>
             </div>
