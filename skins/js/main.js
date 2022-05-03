@@ -1,6 +1,5 @@
 import getAPIData from '../../common/js/api.js';
 import showContent from '../utils/skins.js';
-import {names} from '../../weapons/js/main.js';
 import {getNames} from '../utils/weapons-name.js';
 
 document.addEventListener('DOMContentLoaded',()=>{

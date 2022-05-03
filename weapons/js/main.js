@@ -24,5 +24,3 @@ const getSkinName = () => {
         })
     });
 }
-
-export {names};

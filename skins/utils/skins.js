@@ -37,8 +37,8 @@ export default async function showContent(array){
         }
         content.innerHTML = data;
         loadingContent();
+        disc.classList.add('active');
     }, 2000);
-    disc.classList.add('active');
 }
 
 const skinsPrices = [];
