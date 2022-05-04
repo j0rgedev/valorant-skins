@@ -1,21 +1,20 @@
 import getAPIData from '../../common/js/api.js';
-import showContent from '../utils/skins.js';
-import {getNames} from '../utils/weapons-name.js';
+import {showAllContent} from '../utils/skins.js';
+import {setOptionsName} from '../utils/weapons-name.js';
 
 document.addEventListener('DOMContentLoaded',()=>{
     const url = 'https://valorant-api.com/v1/weapons';
     getAPIData(url)
-        .then((data) => getNames(data.data))
+        .then((data) => setOptionsName(data.data))
         .catch(err => console.error(err));
 
     getAPIData(url)
-        .then((data) => showContent(data.data))
-        .catch(err => console.error(err));
+        .then((data) => showAllContent(data.data))
+        .catch(err => console.error(err));        
 
     filterAction();
     showFilters();
-
-    window.addEventListener('scroll',reveal)
+    window.addEventListener('scroll',reveal);
 })
 
 let cont = 0;
@@ -33,7 +32,7 @@ const filterAction = () => {
         const selectedValues = [].filter
                 .call(sb.options, option => option.selected)
                 .map(option => option.text);
-        const cards = document.querySelectorAll('.'+selectedValues[0]);
+
         const all_cards = document.querySelectorAll('.card');
         all_cards.forEach((elem) => {
             if(!elem.classList.contains(selectedValues[0])){
@@ -44,6 +43,7 @@ const filterAction = () => {
         })
     })
 }
+
 
 const showFilters = () =>{
     const filter_icon = document.getElementById('filter_icon');
@@ -70,3 +70,5 @@ const reveal = () => {
         }
     })
 }
+
+export {cont};

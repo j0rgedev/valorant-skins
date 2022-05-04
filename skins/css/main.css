@@ -51,10 +51,20 @@ html{
     width: 100%;
 }
 
-.title_wrapper div:nth-child(2){
+.f-icon{
     margin-left: -4rem;
     color: white;
+    opacity: 0;
+    transform: translateX(-18px);
+    cursor: pointer;
+    transition: .6s;
 }
+
+.f-icon.active{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
 
 .filters{
     display: flex;

@@ -1,26 +1,27 @@
 import showContent from '../utils/weapons.js';
-import getAPIData from '../../common/js/api.js'
+import getAPIData from '../../common/js/api.js';
 
 document.addEventListener("DOMContentLoaded", function() {
+    sessionStorage.removeItem('weapon-name');
     const url = 'https://valorant-api.com/v1/weapons';
     getAPIData(url)
         .then((data) => showContent(data.data))
         .catch(err => console.error(err));
 
-        
     setTimeout(() => {
-        getSkinName();
+        setName();
     }, 1000);
 });
 
-const names = [];
-
-const getSkinName = () => {
+const setName = () => {
     const btns = document.querySelectorAll('.show_button');
-    btns.forEach((btn,i) => {
+    btns.forEach((btn) => {
         btn.addEventListener('click',()=>{
             let name = btn.id;
-            names.push(name);
+            sessionStorage.setItem('weapon-name',name)
+            location.href = '../../skins/';
         })
     });
 }
+
+

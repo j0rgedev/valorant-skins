@@ -1,11 +1,12 @@
 import loadingContent from '../../common/js/other.js'
 import getAPIData from '../../common/js/api.js';
 
-export default async function showContent(array){
-    runTest();
+async function showAllContent(array){
+    runOffers();
     let data = '';
     const content = document.querySelector('.cards_container');
     const disc = document.getElementById('disclaimer');
+    const f_icon = document.getElementById('f-icon');
     setTimeout(() => {
         for(let i=0;i<array.length;i++){
             for(let j=0;j<array[i].skins.length;j++){
@@ -38,12 +39,18 @@ export default async function showContent(array){
         content.innerHTML = data;
         loadingContent();
         disc.classList.add('active');
+        f_icon.classList.add('active');
+        if(isWeaponFiltered()){
+            let name = sessionStorage.getItem('weapon-name');
+            beginningFilter(name);
+            setSelectedAttribute(name);
+        }
     }, 2000);
 }
 
 const skinsPrices = [];
 
-const runTest = () =>{
+const runOffers = () =>{
     const url = 'https://api.henrikdev.xyz/valorant/v1/store-offers';
     getAPIData(url)
         .then(data => data.data)
@@ -74,6 +81,44 @@ function getPrices(id){
         `;
     }
 }
+
+const isWeaponFiltered = () =>{
+    const name = sessionStorage.getItem('weapon-name');
+    if (name==null){
+        return false;
+    } else {
+        return true;
+    }
+}
+
+let cont = 0;
+const beginningFilter = (name) => {
+    const disc = document.getElementById('disclaimer');
+    cont++;
+    if (cont==1){
+        disc.classList.add('active');
+    }
+    const all_cards = document.querySelectorAll('.card');
+    all_cards.forEach((elem) => {
+        if(elem.classList.contains(name)){
+            elem.style.display = 'block';
+        } else {
+            elem.style.display = 'none';
+        }
+    })
+}
+
+const setSelectedAttribute = (name) =>{
+    const content = document.querySelectorAll('#option');
+    content.forEach((elem)=>{
+        if (elem.textContent === name){
+            elem.setAttribute('selected',true)
+        }
+    })
+}
+
+export {showAllContent};
+export{cont}
 
 
 

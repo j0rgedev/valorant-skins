@@ -1,4 +1,4 @@
-import loadingContent from '../../common/js/other.js'
+import loadingContent from '../../common/js/other.js';
 
 export default function showContent(array){
     let data = '';
