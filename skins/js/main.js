@@ -3,6 +3,7 @@ import {showAllContent} from '../utils/skins.js';
 import {setOptionsName} from '../utils/weapons-name.js';
 
 document.addEventListener('DOMContentLoaded',()=>{
+    sessionStorage.setItem('cont',0)
     const url = 'https://valorant-api.com/v1/weapons';
     getAPIData(url)
         .then((data) => setOptionsName(data.data))
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     window.addEventListener('scroll',reveal);
 })
 
-let cont = 0;
+
 const filterAction = () => {
     const sb = document.querySelector('.weapons_select');
     const btn = document.getElementById('filter_btn');
@@ -25,7 +26,9 @@ const filterAction = () => {
     btn.addEventListener('click',()=>{
 /*         const icons = document.getElementById('filters_icons');
         icons.classList.add('active'); */
-        cont++;
+        let aux = sessionStorage.getItem('cont');
+        sessionStorage.setItem('cont',Number(aux)+1);
+        const cont = sessionStorage.getItem('cont');
         if (cont==1){
             disc.classList.add('active');
         }
@@ -70,5 +73,3 @@ const reveal = () => {
         }
     })
 }
-
-export {cont};
