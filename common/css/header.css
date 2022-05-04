@@ -39,6 +39,7 @@ nav{
     color: rgba(255, 255, 255,0.8);
     font-size: 18px;
     text-decoration: none;
+    text-align: center;
 }
 
 .nav_items a:hover{
