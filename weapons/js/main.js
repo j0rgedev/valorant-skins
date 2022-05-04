@@ -19,7 +19,7 @@ const setName = () => {
         btn.addEventListener('click',()=>{
             let name = btn.id;
             sessionStorage.setItem('weapon-name',name)
-            location.href = '../../skins/';
+            location.href = '../skins/';
         })
     });
 }
