@@ -7,12 +7,13 @@ async function showAllContent(array){
     const content = document.querySelector('.cards_container');
     const disc = document.getElementById('disclaimer');
     const f_icon = document.getElementById('f-icon');
+    const s_icon = document.getElementById('s-icon-wrapper');
     setTimeout(() => {
         for(let i=0;i<array.length;i++){
             for(let j=0;j<array[i].skins.length;j++){
                 let cost = array[i].skins[j].levels[0].uuid;
                 data+=`
-                    <div class="card ${array[i].displayName}" id="card">
+                    <div class="card ${array[i].displayName} ${array[i].skins[j].levels[0].uuid}" id="card">
                         <div class="front">
                             <div>
                                 <h2>${array[i].skins[j].displayName}</h2>
@@ -40,12 +41,15 @@ async function showAllContent(array){
         loadingContent();
         disc.classList.add('active');
         f_icon.classList.add('active');
+        s_icon.classList.add('active');
+        searchSkins();
         if(isWeaponFiltered()){
             let name = sessionStorage.getItem('weapon-name');
             beginningFilter(name);
             setSelectedAttribute(name);
         }
-    }, 2000);
+        setSkinNamesArray(array);
+    }, 1000);
 }
 
 const skinsPrices = [];
@@ -54,11 +58,11 @@ const runOffers = () =>{
     const url = 'https://api.henrikdev.xyz/valorant/v1/store-offers';
     getAPIData(url)
         .then(data => data.data)
-        .then(data => setArray(data.Offers))
+        .then(data => setSkinPricesArray(data.Offers))
         .catch(err => console.error(err));
 }
 
-const setArray = (array) => {
+const setSkinPricesArray = (array) => {
     for (let i=0; i<array.length; i++){
         let aux = {};
         let price = Object.values(array[i].Cost)[0];
@@ -91,7 +95,6 @@ const isWeaponFiltered = () =>{
     }
 }
 
-
 const beginningFilter = (name) => {
     const disc = document.getElementById('disclaimer');
     let aux = sessionStorage.getItem('cont');
@@ -117,6 +120,31 @@ const setSelectedAttribute = (name) =>{
         if (elem.textContent === name){
             elem.setAttribute('selected',true)
         }
+    })
+}
+
+const skinNames = [];
+
+const setSkinNamesArray = (array) => {
+    for(let i=0;i<array.length;i++){
+        for(let j=0;j<array[i].skins.length;j++){
+            skinNames.push({uuid: array[i].skins[j].levels[0].uuid, name: array[i].skins[j].levels[0].displayName});
+        }
+    } 
+} 
+
+const searchSkins = () =>{
+    const sInput = document.getElementById('search');
+    const cards = document.querySelectorAll('.card');
+    sInput.addEventListener('input',e=>{
+        const value = e.target.value;
+        skinNames.forEach((skin,index) =>{
+            if(skin.name.toLowerCase().includes(value.toLowerCase())){
+                cards[index].classList.remove('hide');
+            } else {
+                cards[index].classList.add('hide');
+            }
+        })
     })
 }
 

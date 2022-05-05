@@ -35,6 +35,7 @@ export default function showContent(array){
     }
     loadingContent();
     content.innerHTML = data;
+    setWeaponsArray(array);
 }
 
 function getWeaponCategory(array,pos){

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         .catch(err => console.error(err));        
 
     filterAction();
+    showSearchBar();
     showFilters();
     window.addEventListener('scroll',reveal);
 })
@@ -24,8 +25,6 @@ const filterAction = () => {
     const btn = document.getElementById('filter_btn');
     const disc = document.getElementById('disclaimer');
     btn.addEventListener('click',()=>{
-/*         const icons = document.getElementById('filters_icons');
-        icons.classList.add('active'); */
         let aux = sessionStorage.getItem('cont');
         sessionStorage.setItem('cont',Number(aux)+1);
         const cont = sessionStorage.getItem('cont');
@@ -48,10 +47,20 @@ const filterAction = () => {
 }
 
 
+const showSearchBar = () =>{
+    const icon = document.getElementById('search-icon');
+    const disc = document.getElementById('disclaimer');
+    const search = document.getElementById('s-wrapper');
+    icon.addEventListener('click',()=>{
+        search.classList.toggle('active');
+        disc.classList.remove('active');
+    })
+}
+
 const showFilters = () =>{
     const filter_icon = document.getElementById('filter_icon');
     const disc = document.getElementById('disclaimer');
-    const f = document.getElementById('filters');
+    const f = document.getElementById('right');
     filter_icon.addEventListener('click',()=>{
         f.classList.toggle('active');
         disc.classList.remove('active');
