@@ -49,10 +49,10 @@ async function showAllContent(array){
             setSelectedAttribute(name);
         }
         setSkinNamesArray(array);
-    }, 1000);
+    }, 1500);
 }
 
-const skinsPrices = [];
+let skinsPrices = [];
 
 const runOffers = () =>{
     const url = 'https://api.henrikdev.xyz/valorant/v1/store-offers';
