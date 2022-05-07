@@ -37,6 +37,7 @@ html{
 .disclaimer.active{
     opacity: 1;
     margin-top: 12px;
+    margin-bottom: 12px;
     transform: translateY(0);
 }
 
@@ -124,7 +125,7 @@ html{
     align-items: center;
     justify-content: flex-end;
     width: 50%;
-    gap: 50px;
+    gap: 20px;
     opacity: 0;
     transition: .6s;
     transform: translateY(24px);
@@ -407,6 +408,7 @@ html{
 
     .right{
         gap: 10px;
+        width: 50%;
     }
 
     .right.active{
@@ -414,7 +416,7 @@ html{
     }
 
     .search_wrapper input{
-        font-size: 16px;
+        font-size: 14px;
         width: 100%;
     }
 

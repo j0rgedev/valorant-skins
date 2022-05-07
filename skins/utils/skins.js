@@ -96,14 +96,9 @@ const isWeaponFiltered = () =>{
 }
 
 const beginningFilter = (name) => {
-    const disc = document.getElementById('disclaimer');
     let aux = sessionStorage.getItem('cont');
     sessionStorage.setItem('cont',Number(aux)+1);
-    const cont = sessionStorage.getItem('cont');
-    if (cont==1){
-        disc.classList.add('active');
-    }
-    
+    const cont = sessionStorage.getItem('cont');   
     const all_cards = document.querySelectorAll('.card');
     all_cards.forEach((elem) => {
         if(elem.classList.contains(name)){
