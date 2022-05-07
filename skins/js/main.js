@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     filterAction();
     showSearchBar();
     showFilters();
-    setTimeout(() => {
-        removeFilters();
-    }, 2000);
     
     window.addEventListener('scroll',reveal);
 })
@@ -78,10 +75,12 @@ const reveal = () => {
 
 const removeFilters = () => {
     const cards = document.querySelectorAll('.card');
-    const btn = document.getElementById('remove-filters-button');
-    btn.addEventListener('click',()=>{
-        cards.forEach((card)=>{
-            card.style.display = 'block';
-        })
+    cards.forEach((card)=>{
+        card.style.display = 'block';
     })
 }
+
+const btn = document.getElementById('remove-filters-button');
+btn.addEventListener('click',()=>{
+    removeFilters();
+})
