@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     window.addEventListener('scroll',reveal);
 })
 
-
 const filterAction = () => {
     const sb = document.querySelector('.weapons_select');
     const btn = document.getElementById('filter_btn');
@@ -84,3 +83,8 @@ const btn = document.getElementById('remove-filters-button');
 btn.addEventListener('click',()=>{
     removeFilters();
 })
+
+
+
+
+

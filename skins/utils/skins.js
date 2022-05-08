@@ -13,7 +13,7 @@ async function showAllContent(array){
             for(let j=0;j<array[i].skins.length;j++){
                 let cost = array[i].skins[j].levels[0].uuid;
                 data+=`
-                    <div class="card ${array[i].displayName} ${array[i].skins[j].levels[0].uuid}" id="card">
+                    <div class="card ${array[i].displayName}" id="card">
                         <div class="front">
                             <div>
                                 <h2>${array[i].skins[j].displayName}</h2>
@@ -25,7 +25,7 @@ async function showAllContent(array){
                                 ${getPrices(cost)}
                             </div>
                             <div>
-                                <p>Ver variantes</p>
+                                <p id="chromas-button" class="${array[i].skins[j].levels[0].uuid}">Ver variantes</p>
                             </div>
                         </div>
                         <div class="back">
@@ -49,6 +49,7 @@ async function showAllContent(array){
             setSelectedAttribute(name);
         }
         setSkinNamesArray(array);
+        openChromas();
     }, 1500);
 }
 
@@ -123,7 +124,8 @@ const skinNames = [];
 const setSkinNamesArray = (array) => {
     for(let i=0;i<array.length;i++){
         for(let j=0;j<array[i].skins.length;j++){
-            skinNames.push({uuid: array[i].skins[j].levels[0].uuid, name: array[i].skins[j].levels[0].displayName});
+            skinNames.push({uuid: array[i].skins[j].levels[0].uuid, name: array[i].skins[j].levels[0].displayName,
+            levels: array[i].skins[j].chromas});
         }
     } 
 } 
@@ -141,6 +143,87 @@ const searchSkins = () =>{
             }
         })
     })
+}
+
+const openChromas = () =>{
+    const openChromasButton = document.querySelectorAll('#chromas-button');
+    const closeChromasButton = document.querySelectorAll('#close-button');
+    const bg = document.getElementById('overlay');
+
+    openChromasButton.forEach((btn)=>{
+        btn.addEventListener('click',()=>{
+            const chromas = document.getElementById('chromas');
+            openChromas(chromas,btn);
+        })
+    })
+    
+    closeChromasButton.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            const chromas = document.getElementById('chromas');
+            closeChromas(chromas);
+        })
+    })
+    
+    bg.addEventListener('click',()=>{
+        const chromas = document.querySelectorAll('.skin-chromas.active');
+        chromas.forEach(div=>{
+            closeChromas(div)
+        })
+    })
+    
+    const openChromas = (div,btn) => {
+        if (div==null) return;
+        div.classList.add('active');
+        bg.classList.add('active');
+        showChromasSkins(btn.className);
+    }
+    
+    const closeChromas = (div) => {
+        if (div==null) return;
+        div.classList.remove('active');
+        bg.classList.remove('active');
+        deleteChromasSkins();
+    }
+}
+
+
+const showChromasSkins = (id) =>{
+    let skinN = '';
+    let levels = '';
+    skinNames.forEach((skin,index)=>{
+        if(skin.uuid===id){
+            skinN = skin.name;
+            levels = skin.levels;
+        } 
+    })
+    document.querySelector('.skin-chromas-title').textContent = skinN;
+    const body = document.querySelector('.skin-chromas-body');
+
+    if (levels.length == 1){
+        const chroma = document.createElement('div');
+        chroma.innerHTML = `<h3>NO TIENE VARIANTES</h3>`
+        body.appendChild(chroma);
+        chroma.classList.add('chroma');
+    } else {
+        levels.forEach((level,index)=>{
+            if(index>0){
+                let chroma = document.createElement('div');
+                chroma.innerHTML = `<h3>${level.displayName}</h3>
+                <div class="chroma-img"><img src="${level.fullRender}"></div>`;
+                body.appendChild(chroma);
+                chroma.classList.add('chroma');
+            }
+        })
+    }
+}
+
+const deleteChromasSkins = () =>{
+    const title =  document.querySelector('.skin-chromas-title');
+    title.textContent = '';
+    const body = document.querySelector('.skin-chromas-body');
+    while (body.firstChild){
+        body.removeChild(body.firstChild);
+    }
 }
 
 export {showAllContent};
