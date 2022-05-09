@@ -32,8 +32,9 @@ export function showAllContent(array){
             `;
             setSkinNamesArray(array,i,j);
         }
+        content.innerHTML = data;
     }
-    content.innerHTML = data;
+    
 }
 
 export const setSkinPricesArray = (array) => {
@@ -124,7 +125,6 @@ export const bundleSkinFilter = () =>{
         i.forEach(elem =>{
             all_cards[elem].style.display = 'block';
         }) 
-        sessionStorage.removeItem('bundle-name');
     }
 }  
 
