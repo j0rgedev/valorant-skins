@@ -1,69 +1,42 @@
-import loadingContent from '../../common/js/other.js'
-import getAPIData from '../../common/js/api.js';
+export const skinNames = [];
+export let skinsPrices = [];
 
-async function showAllContent(array){
-    runOffers();
+export function showAllContent(array){
     let data = '';
     const content = document.querySelector('.cards_container');
-    const disc = document.getElementById('disclaimer');
-    const f_icon = document.getElementById('f-icon');
-    const s_icon = document.getElementById('s-icon-wrapper');
-    setTimeout(() => {
-        for(let i=0;i<array.length;i++){
-            for(let j=0;j<array[i].skins.length;j++){
-                let cost = array[i].skins[j].levels[0].uuid;
-                data+=`
-                    <div class="card ${array[i].displayName}" id="card">
-                        <div class="front">
-                            <div>
-                                <h2>${array[i].skins[j].displayName}</h2>
-                            </div>
-                            <div>
-                                <img src=${array[i].skins[j].chromas[0].fullRender}>
-                            </div>
-                            <div>
-                                ${getPrices(cost)}
-                            </div>
-                            <div>
-                                <p id="chromas-button" class="${array[i].skins[j].levels[0].uuid}">Ver variantes</p>
-                            </div>
+    for(let i=0;i<array.length;i++){
+        for(let j=0;j<array[i].skins.length;j++){
+            let cost = array[i].skins[j].levels[0].uuid;
+            data+=`
+                <div class="card ${array[i].displayName} ${array[i].skins[j].levels[0].uuid}" id="card">
+                    <div class="front">
+                        <div>
+                            <h2>${array[i].skins[j].displayName}</h2>
                         </div>
-                        <div class="back">
-                            <div>
-                                <img class="card_img" src=${array[i].skins[j].chromas[0].fullRender}>
-                            </div>
-                        </div> 
-                    </div>      
-                `
-            }
+                        <div>
+                            <img src=${array[i].skins[j].chromas[0].fullRender}>
+                        </div>
+                        <div>
+                            ${getPrices(cost)}
+                        </div>
+                        <div>
+                            <p id="chromas-button" class="${array[i].skins[j].levels[0].uuid}">Ver variantes</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div>
+                            <img class="card_img" src=${array[i].skins[j].chromas[0].fullRender}>
+                        </div>
+                    </div> 
+                </div>      
+            `;
+            setSkinNamesArray(array,i,j);
         }
-        content.innerHTML = data;
-        loadingContent();
-        disc.classList.add('active');
-        f_icon.classList.add('active');
-        s_icon.classList.add('active');
-        searchSkins();
-        if(isWeaponFiltered()){
-            let name = sessionStorage.getItem('weapon-name');
-            beginningFilter(name);
-            setSelectedAttribute(name);
-        }
-        setSkinNamesArray(array);
-        openChromas();
-    }, 1500);
+    }
+    content.innerHTML = data;
 }
 
-let skinsPrices = [];
-
-const runOffers = () =>{
-    const url = 'https://api.henrikdev.xyz/valorant/v1/store-offers';
-    getAPIData(url)
-        .then(data => data.data)
-        .then(data => setSkinPricesArray(data.Offers))
-        .catch(err => console.error(err));
-}
-
-const setSkinPricesArray = (array) => {
+export const setSkinPricesArray = (array) => {
     for (let i=0; i<array.length; i++){
         let aux = {};
         let price = Object.values(array[i].Cost)[0];
@@ -96,10 +69,15 @@ const isWeaponFiltered = () =>{
     }
 }
 
-const beginningFilter = (name) => {
-    let aux = sessionStorage.getItem('cont');
-    sessionStorage.setItem('cont',Number(aux)+1);
-    const cont = sessionStorage.getItem('cont');   
+export const filterWeapons = () => {
+    if (isWeaponFiltered()){
+        let name = sessionStorage.getItem('weapon-name');
+        beginningFilter(name);
+        setSelectedAttribute(name);
+    }
+}
+
+const beginningFilter = (name) => { 
     const all_cards = document.querySelectorAll('.card');
     all_cards.forEach((elem) => {
         if(elem.classList.contains(name)){
@@ -119,18 +97,43 @@ const setSelectedAttribute = (name) =>{
     })
 }
 
-const skinNames = [];
+const isBundleSelected = () =>{
+    const ss = sessionStorage.getItem('bundle-name');
+    if (ss==null){
+        return false;
+    } else {
+        return true;
+    }
+}
 
-const setSkinNamesArray = (array) => {
-    for(let i=0;i<array.length;i++){
-        for(let j=0;j<array[i].skins.length;j++){
-            skinNames.push({uuid: array[i].skins[j].levels[0].uuid, name: array[i].skins[j].levels[0].displayName,
-            levels: array[i].skins[j].chromas});
-        }
-    } 
+export const bundleSkinFilter = () =>{
+    if(isBundleSelected()){
+        let i = []
+        let bname = sessionStorage.getItem('bundle-name');
+        let fname = bname.split(' ');
+        const all_cards = document.querySelectorAll('.card');
+        skinNames.forEach((skin,index)=>{
+            let aux = skin.name.split(' ');
+            if(aux[0].includes(fname[0])){
+                i.push(index)
+                all_cards.forEach((elem) => {
+                    elem.style.display = 'none';
+                })
+            } 
+        })
+        i.forEach(elem =>{
+            all_cards[elem].style.display = 'block';
+        }) 
+        sessionStorage.removeItem('bundle-name');
+    }
+}  
+
+const setSkinNamesArray = (array,i,j) => {
+    skinNames.push({uuid: array[i].skins[j].levels[0].uuid, name: array[i].skins[j].levels[0].displayName,
+        levels: array[i].skins[j].chromas});
 } 
 
-const searchSkins = () =>{
+export const searchSkins = () =>{
     const sInput = document.getElementById('search');
     const cards = document.querySelectorAll('.card');
     sInput.addEventListener('input',e=>{
@@ -145,7 +148,7 @@ const searchSkins = () =>{
     })
 }
 
-const openChromas = () =>{
+export const openChromas = () =>{
     const openChromasButton = document.querySelectorAll('#chromas-button');
     const closeChromasButton = document.querySelectorAll('#close-button');
     const bg = document.getElementById('overlay');
@@ -225,8 +228,6 @@ const deleteChromasSkins = () =>{
         body.removeChild(body.firstChild);
     }
 }
-
-export {showAllContent};
 
 
 

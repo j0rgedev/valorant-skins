@@ -12,7 +12,7 @@
     <link rel="stylesheet" href='../common/css/header.css'>
     <link rel="stylesheet" href='../common/css/footer.css'>
     <link rel="stylesheet" href='../common/css/waves.css'>
-    <link rel="stylesheet" href='./css/main.css'>
+    <link rel="stylesheet" href='./assets/main.css'>
     <!-- FONTAWESOME-->
     <script src="https://kit.fontawesome.com/46ad5ba21c.js" crossorigin="anonymous"></script>
     <title>Valorant Skins</title>
@@ -28,7 +28,7 @@
                 <li><a href="#others_section">Otros</a>
                   <ul>
                       <li><a href="../weapons/">Armas</a></li>
-                      <li><a href="../bundles/">Bundles</a></li>
+                      <li><a href="../skins/">Skins</a></li>
                       <li><a href="#">Buddies</a></li>
                       <li><a href="#">Tarjetas</a></li>
                       <li><a href="#">Sprays</a></li>
@@ -42,44 +42,12 @@
   <!-- MAIN SECTION -->
     <section class="hero" id="main_section">
         <div class="container">
-            <div>
-                <div class="title_wrapper">
-                    <div class="search_icon" id="s-icon-wrapper">
-                        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
-                    </div>
-                    <div>
-                        <h2 class="title">SKINS</h2>
-                    </div>
-                    <div class="f-icon" id="f-icon">
-                        <i class="fa-solid fa-filter" id="filter_icon"></i>
-                    </div>
-                </div>
-               <!--  <p class="disclaimer" id="disclaimer">Desliza para ver todas las skins</p> -->
-                <div class="filters" id="filters">
-                    <div class="search_wrapper" id="s-wrapper">
-                        <input type="search" placeholder="Glitchpop Odin" id="search">
-                    </div>
-                    <div class="right" id="right">
-                        <select name="Armas" class="weapons_select"></select>
-                        <button class="filter_btn" id="filter_btn">Filtrar</button>
-                        <i class="fa-solid fa-filter-circle-xmark" id="remove-filters-button"></i>
-                    </div>
-                </div>
-            </div>
+            <h2 class="title">BUNDLES</h2>
             <div id="loader">
               <span class="loader"></span>
             </div>
-            <div class="cards_container" id="cards_wr">
+            <div class="cards_container" id="cards_wr">             
             </div>
-            <div class="skin-chromas" id="chromas">
-                <div class="skin-chromas-header">
-                    <div class="skin-chromas-title"></div>
-                    <button class="close-button" id="close-button">&times;</button>
-                </div>
-                <div class="skin-chromas-body">
-                </div>
-            </div>
-            <div id="overlay"></div>
             <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
                 <defs>
                   <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
@@ -108,8 +76,8 @@
             <a href="../weapons/"><img src="../img/Valorant-weapons.jpg" alt="weapons_img"></a>
         </div>
         <div class="box">
-            <h3>Bundles</h3>
-            <a href="../bundles/"><img src="../img/last_bundle.jpg" alt="bundle_img"></a>
+            <h3>Skins</h3>
+            <a href="../skins/"><img src="../img/Prime_Vandal.webp" alt="bundle_img"></a>
         </div>
         <div class="box">
           <h3>Buddies</h3>
@@ -145,9 +113,6 @@
   </footer>
   <script src="../common/js/setHeader.js" type="module"></script>
   <script src="../common/js/api.js" type="module"></script>
-  <script src="./utils/skins.js" type="module"></script>
-  <script src="./js/main.js" type="module"></script>
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./assets/main.js" type="module"></script>
 </body>
 </html>

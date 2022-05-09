@@ -3,6 +3,7 @@ import getAPIData from '../../common/js/api.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     sessionStorage.removeItem('weapon-name');
+    sessionStorage.removeItem('bundle-name');
     const url = 'https://valorant-api.com/v1/weapons';
     getAPIData(url)
         .then((data) => showContent(data.data))

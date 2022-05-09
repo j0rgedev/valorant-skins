@@ -4,6 +4,7 @@ document.querySelector(".main_btn").onclick = () => {
 
 document.addEventListener('DOMContentLoaded',()=>{
     sessionStorage.removeItem('weapon-name');
+    sessionStorage.removeItem('bundle-name');
 })
 
 
