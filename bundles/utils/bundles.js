@@ -1,5 +1,3 @@
-const bundlesNames = [];
-
 const setHTML = (array) =>{
     const parent = document.querySelector('.cards_container');
     array.forEach((element,index) => {
@@ -13,7 +11,6 @@ const setHTML = (array) =>{
         parentDiv.appendChild(secondChildDiv);
         addCardBG(element.displayIcon,index);
     });
-    removePreLoadingStuff();
 }
 
 const createElement = (name,classN) => {
@@ -22,12 +19,6 @@ const createElement = (name,classN) => {
     return div;
 }
 
-const removePreLoadingStuff = () =>{
-    const loader = document.getElementById('loader');
-    const cardsC = document.getElementById('cards_wr');
-    loader.style.display = 'none';
-    cardsC.style.height = 'auto';
-}
 
 const addCardBG = (url,index) =>{
     const cards = document.querySelectorAll('.card');
