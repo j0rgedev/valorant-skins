@@ -6,16 +6,13 @@ window.addEventListener('load',()=>{
     sessionStorage.removeItem('weapon-name');
     sessionStorage.removeItem('bundle-name');
     const url = 'https://valorant-api.com/v1/bundles';
-    const p1 = getAPIData(url)
-                .then((data)=> setHTML(data.data))
-                .catch((err)=>console.error(err))
-                .finally(()=>{
-                    loadingContent();
-                    cardsonClick();
-                })
-   /*  Promise.allSettled([p1]) */
-        
-        
+    getAPIData(url)
+        .then((data)=> setHTML(data.data))
+        .catch((err)=>console.error(err))
+        .finally(()=>{
+            loadingContent();
+            cardsonClick();
+        })
 })
 
 const cardsonClick = () =>{

@@ -33,52 +33,53 @@ html{
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 35px;
-    gap: 40px;
+    gap: 20px;
 }
 
 .card{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
-    width: 23rem;
-    height: 16rem;
+    width: 15rem;
+    height: 10rem;
     position: relative;
     overflow: hidden;
     border-radius: 50px;
-    background-size: cover;
-    transition: .8s;
-    cursor: pointer;
+    cursor: default;
 }
 
-.card:hover{
-    transform: scale(1.1);
-}
-
-.card-img{
-    width: 100%;
-    height: 80%;
-}
-
-.card-img img{
+.card-info{
     width: 100%;
     height: 100%;
-}
-
-.card-title{
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 20%;
-    -webkit-backdrop-filter:blur(20px) brightness(110%);
-    backdrop-filter:blur(20px) brightness(110%);
-    padding: 0 1rem 0 1rem;
+    align-items: center;
+    backdrop-filter: blur(40px) brightness(110%);
 }
 
-.card-title h1{
-    font-size: 24px;
-    letter-spacing: 2px;
-    font-weight: bold;
+.card-info div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-info .c-title{
+   width: 50%;
+   height: 100%;
+}
+
+.card-info .c-title h1{
     color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.card-info .c-img{
+    width: 50%;
+    height: 100%;
 }
 
 #loader{
@@ -174,11 +175,6 @@ html{
 
     .container h2{
         font-size: 34px;
-    }
-
-    .card{
-        width: 20rem;
-        height: 13rem;
     }
 
     .card-title h1{

@@ -12,11 +12,9 @@
     <link rel="stylesheet" href='../common/css/header.css'>
     <link rel="stylesheet" href='../common/css/footer.css'>
     <link rel="stylesheet" href='../common/css/waves.css'>
-    <link rel="stylesheet" href='./css/main.css'>
+    <link rel="stylesheet" href='./assets/main.css'>
     <!-- FONTAWESOME-->
     <script src="https://kit.fontawesome.com/46ad5ba21c.js" crossorigin="anonymous"></script>
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Valorant Skins</title>
 </head>
 <body>
@@ -29,9 +27,9 @@
                 <li><a href="#main_section">Inicio</a></li>
                 <li><a href="#others_section">Otros</a>
                   <ul>
+                      <li><a href="../weapons/">Armas</a></li>
                       <li><a href="../skins/">Skins</a></li>
                       <li><a href="../bundles/">Bundles</a></li>
-                      <li><a href="../buddies/">Buddies</a></li>
                       <li><a href="#">Tarjetas</a></li>
                       <li><a href="#">Sprays</a></li>
                   </ul>
@@ -44,7 +42,7 @@
   <!-- MAIN SECTION -->
     <section class="hero" id="main_section">
         <div class="container">
-            <h2 class="title">ARMAS</h2>
+            <h2 class="title">BUDDIES</h2>
             <div id="loader">
               <span class="loader"></span>
             </div>
@@ -74,20 +72,19 @@
       </div>
       <div class="f_container">
         <div class="box">
+            <h3>Armas</h3>
+            <a href="../weapons/"><img src="../img/Valorant-weapons.jpg" alt="weapons_img"></a>
+        </div>
+        <div class="box">
             <h3>Skins</h3>
-            <a href="../skins/"><img src="../img/Prime_Vandal.webp" alt="weapons_img"></a>
+            <a href="../skins/"><img src="../img/Prime_Vandal.webp" alt="bundle_img"></a>
         </div>
         <div class="box">
-            <h3>Bundles</h3>
-            <a href="../bundles/"><img src="../img/last_bundle.jpg" alt="bundle_img"></a>
-        </div>
-        <div class="box">
-          <h3>Buddies</h3>
-          <a href="../buddies/"><img src="../img/buddies.jpg" alt="weapons_img"></a>
+          <h3>Bundles</h3>
+          <a href="../bundles/"><img src="../img/last_bundle.jpg" alt="weapons_img"></a>
       </div>
     </div>
     <div class="f2_container">
-
         <div class="box">
             <h3>Tarjetas</h3>
             <a href="#"><img src="../img/cards.webp" alt="weapons_img"></a>
@@ -96,6 +93,7 @@
             <h3>Sprays</h3>
             <a href="#"><img src="../img/sprays.jpg" alt="weapons_img"></a>
         </div>
+    </div>
     </div>
     </section>
     <!-- FOOTER -->
@@ -115,14 +113,6 @@
   </footer>
   <script src="../common/js/setHeader.js" type="module"></script>
   <script src="../common/js/api.js" type="module"></script>
-  <script src="./js/main.js"type="module"></script>
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 3000,
-      once: false,
-    });
-  </script>
+  <script src="./assets/main.js" type="module"></script>
 </body>
 </html>
