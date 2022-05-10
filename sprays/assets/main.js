@@ -1,5 +1,5 @@
 import getAPIData from '../../common/js/api.js';
-import {setSprays} from '../utils/sprays.JS';
+import {setSprays} from '../utils/sprays.js';
 import loadingContent from '../../common/js/other.js';
 
 window.addEventListener('load',()=>{
