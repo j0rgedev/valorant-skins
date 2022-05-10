@@ -8,3 +8,7 @@ I decided to make this website up to test my api skills as long as web programmi
 - HTML
 - CSS
 - JS
+
+# Helpers
+- Waves background taken from https://valorant-api.com/
+
