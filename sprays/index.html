@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href='../common/css/header.css'>
+    <link rel="stylesheet" href='../common/css/footer.css'>
+    <link rel="stylesheet" href='../common/css/waves.css'>
+    <link rel="stylesheet" href='./assets/main.css'>
+    <!-- FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/46ad5ba21c.js" crossorigin="anonymous"></script>
+    <title>Valorant Skins</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <a href='../'><h1>Valorant Skins</h1></a>
+        <nav id="nav">
+            <i class="fa-solid fa-xmark" id="closenav_btn"></i>
+            <ul class="nav_items">
+                <li><a href="#main_section">Inicio</a></li>
+                <li><a href="#others_section">Otros</a>
+                  <ul>
+                      <li><a href="../weapons/">Armas</a></li>
+                      <li><a href="../skins/">Skins</a></li>
+                      <li><a href="../bundles/">Bundles</a></li>
+                      <li><a href="../buddies/">Buddies</a></li>
+                      <li><a href="../tarjetas/">Tarjetas</a></li>
+                  </ul>
+                </li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-bars" id="bars_btn"></i>
+    </header>
+  <!-- MAIN SECTION -->
+    <section class="hero" id="main_section">
+        <div class="container">
+            <h2 class="title">SPRAYS</h2>
+            <div id="loader">
+              <span class="loader"></span>
+            </div>
+            <div class="cards_container" id="cards_wr">
+            </div>
+            <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+                <defs>
+                  <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path></defs>
+                <g class="wave1">
+                  <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                </use></g>
+                <g class="wave2">
+                  <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                </use></g>
+                <g class="wave3">
+                  <use xlink:href="#wave-path" x="50" y="9" fill="rgb(255, 237, 237)">
+                </use></g>
+            </svg>
+        </div>
+    </section>
+    <!-- OTHERS SECTION -->
+    <section class="others" id="others_section">
+      <div class="title2">
+          <h1>Otros</h1>
+          <p>¡Sigue descubriendo más!</p>
+      </div>
+      <div class="f_container">
+        <div class="box">
+            <h3>Armas</h3>
+            <a href="../weapons/"><img src="../img/Valorant-weapons.jpg" alt="weapons_img"></a>
+        </div>
+        <div class="box">
+            <h3>Skins</h3>
+            <a href="../skins/"><img src="../img/Prime_Vandal.webp" alt="bundle_img"></a>
+        </div>
+        <div class="box">
+          <h3>Bundles</h3>
+          <a href="../bundles/"><img src="../img/last_bundle.jpg" alt="weapons_img"></a>
+      </div>
+    </div>
+    <div class="f2_container">
+        <div class="box">
+            <h3>Buddies</h3>
+            <a href="../buddies/"><img src="../img/buddies.jpg" alt="weapons_img"></a>
+        </div>
+        <div class="box">
+            <h3>Tarjetas</h3>
+            <a href="../tarjetas/"><img src="../img/cards.webp" alt="weapons_img"></a>
+        </div>
+    </div>
+    </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer_container" id="contact">
+          <div class="first_row">
+              <a href="https://github.com/jorgevfx"><i class="fa-brands fa-github"></i></a>  
+              <i class="fa-solid fa-slash"></i>
+              <a href="https://twitter.com/jorgevfx"><i class="fa-brands fa-twitter"></i></a>
+              <i class="fa-solid fa-slash"></i>
+              <a href="https://discord.gg/zEmmh4g6"><i class="fa-brands fa-discord"></i></a> 
+          </div>
+          <div class="last_row">
+              <h1>Valorant Skins</h1>
+          </div>
+      </div>
+  </footer>
+  <script src="../common/js/setHeader.js" type="module"></script>
+  <script src="../common/js/api.js" type="module"></script>
+  <script src="./assets/main.js" type="module"></script>
+</body>
+</html>
