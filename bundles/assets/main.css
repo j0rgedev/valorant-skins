@@ -45,6 +45,7 @@ html{
     position: relative;
     overflow: hidden;
     border-radius: 50px;
+    -webkit-border-radius: 50px;
     background-size: cover;
     transition: .8s;
     cursor: pointer;

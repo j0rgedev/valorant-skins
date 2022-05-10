@@ -55,6 +55,7 @@ html{
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(40px) brightness(110%);
+    -webkit-backdrop-filter: blur(40px) brightness(110%);
 }
 
 .card-info div{
