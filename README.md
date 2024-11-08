@@ -2,7 +2,7 @@
 Responsive website for all valorant skins
 
 # Website URL
-https://jorgevfx.github.io/valorant-skins/
+https://j0rgedev.github.io/valorant-skins/
 
 # Purpose
 I decided to make this website up to test my api skills as long as web programming ones.
